@@ -26,6 +26,8 @@ $msgBoxInput =  [System.Windows.MessageBox]::Show('Would you like to use Swedish
         $arr += $num | Get-Random -Count 6
         # get 4 random special characters
         $arr += $char.Split(",") | Get-Random -Count 4
+        # Randomize the array with the same count as the array is already
+        # then put it together again
         $pswd = ($arr | Get-Random -Count $arr.Count) -join ""
         [System.Windows.MessageBox]::Show($pswd,'Your password has been copied to your clipboard') 
         Set-Clipboard -Value "$pswd"
@@ -44,6 +46,8 @@ $msgBoxInput =  [System.Windows.MessageBox]::Show('Would you like to use Swedish
         $arr += $num | Get-Random -Count 6
         # get 4 random special characters
         $arr += $char.Split(",") | Get-Random -Count 4
+        # Randomize the array with the same count as the array is already
+        # then put it together again
         ($arr | Get-Random -Count $arr.Count) -join ""
         $pswd = ($arr | Get-Random -Count $arr.Count) -join ""
         [System.Windows.MessageBox]::Show($pswd,'Your password has been copied to your clipboard')
